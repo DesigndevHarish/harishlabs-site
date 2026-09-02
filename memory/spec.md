@@ -1,0 +1,3 @@
+# Harish Kumar Portfolio — Living Spec
+
+Static showcase portfolio. Core interactions: responsive anchor navigation, stack category tabs, selectable project cards, clickable architecture nodes with detail panel, dashboard tabs with demo KPIs and charts, mobile navigation. No auth and no live integrations. External links are labeled placeholders: `https://github.com/your-handle`, `https://www.linkedin.com/in/your-handle`, and `harish.kumar@example.com`.
