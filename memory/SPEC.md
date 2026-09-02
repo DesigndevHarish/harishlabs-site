@@ -16,7 +16,7 @@ Single-page, dark-first personal portfolio for Harish Kumar, Data Engineer / Dat
 ## Data and integrations
 
 - Portfolio content is static and intentionally demo-oriented; no live external APIs are connected.
-- GitHub, LinkedIn, email, and resume destinations are clearly labeled placeholder links for replacement.
+- GitHub, project repositories, email, and WhatsApp are connected to Harish's supplied destinations; LinkedIn is intentionally omitted for now and the resume link remains open for later.
 - Existing FastAPI status endpoints remain available under `/api` for template connectivity smoke checks.
 
 ## Visual system

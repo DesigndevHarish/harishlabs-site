@@ -4,9 +4,9 @@ import {
   ArrowDownRight,
   ArrowRight,
   Check,
-  BriefcaseBusiness,
   Code2,
   Mail,
+  MessageCircle,
   Menu,
   MoveUpRight,
   Network,
@@ -24,6 +24,7 @@ type Project = {
   description: string;
   tags: string[];
   accent: string;
+  githubUrl: string;
 };
 
 type ArchitectureNode = {
@@ -60,6 +61,7 @@ const projects: Project[] = [
       "An end-to-end retail platform that moves historical and streaming events into trusted, business-ready models.",
     tags: ["Python", "Redpanda", "AWS S3", "Snowflake", "dbt", "Power BI"],
     accent: "cyan",
+    githubUrl: "https://github.com/DesigndevHarish/Retail-data-project",
   },
   {
     number: "02",
@@ -69,6 +71,7 @@ const projects: Project[] = [
       "A cloud warehouse that turns raw booking records into clean analytical models and reliable reporting layers.",
     tags: ["Snowflake", "SQL", "dbt", "Python", "Power BI"],
     accent: "blue",
+    githubUrl: "https://github.com/DesigndevHarish/Hoteldawn-DataWarehouse-",
   },
   {
     number: "03",
@@ -78,6 +81,7 @@ const projects: Project[] = [
       "An analytical solution for understanding sales, customer behavior, product performance, returns, and KPIs.",
     tags: ["SQL", "Snowflake", "Power BI", "DAX"],
     accent: "green",
+    githubUrl: "https://github.com/DesigndevHarish/Retail-data-project",
   },
 ];
 
@@ -107,9 +111,9 @@ const principles = [
 ] as const;
 
 const externalLinks = {
-  github: "https://github.com/your-handle",
-  linkedin: "https://www.linkedin.com/in/your-handle",
-  email: "mailto:harish.kumar@example.com",
+  github: "https://github.com/DesigndevHarish",
+  email: "mailto:hk.tech1307@gmail.com",
+  whatsapp: "https://wa.me/919789231215",
 };
 
 function SectionLabel({ number, children }: { number: string; children: string }) {
@@ -278,9 +282,9 @@ export default function Home() {
 
       <section className="terminal-section" data-testid="terminal-section"><div className="terminal-topline"><span>data-platform / runtime</span><span><span className="tiny-status-dot" /> visual system check</span></div><div className="terminal-grid"><div className="terminal-copy"><span className="mono-kicker">07 / pipeline status</span><h2 data-testid="terminal-heading">Quietly reliable<br /><span>by design.</span></h2><p data-testid="terminal-description">The system is only impressive when it keeps doing its job.</p></div><div className="terminal-window" data-testid="terminal-window"><div className="terminal-window-bar"><span>pipeline_status</span><span>●</span></div><div className="terminal-lines">{[["INGESTION", "ONLINE"], ["STREAMING", "ONLINE"], ["S3 STORAGE", "ONLINE"], ["SNOWFLAKE", "ONLINE"], ["DBT", "ONLINE"], ["POWER BI", "ONLINE"]].map(([label, status]) => <div key={label}><span>{label}</span><i /><strong>{status}</strong></div>)}</div><div className="terminal-result"><span>system status:</span><strong><span className="tiny-status-dot" /> all systems operational</strong></div></div></div></section>
 
-      <section className="section github-section" data-testid="github-section"><div className="section-intro"><SectionLabel number="08">Code that builds the system</SectionLabel><p className="section-note" data-testid="github-section-note">Selected repositories / placeholder links.</p></div><div className="github-heading"><h2 data-testid="github-heading">Show the work.<br /><span>Share the thinking.</span></h2><a className="github-main-link" href={externalLinks.github} target="_blank" rel="noreferrer" data-testid="github-main-link"><Code2 size={17} /> View GitHub <MoveUpRight size={15} /></a></div><div className="repo-grid">{projects.map((project, index) => <Card className="repo-card" key={project.title} data-testid={`repository-card-${index + 1}`}><div className="repo-top"><Code2 size={18} /><span>public / project-{project.number}</span></div><h3 data-testid={`repository-title-${index + 1}`}>{index === 0 ? "retail-data-platform" : index === 1 ? "hotel-booking-warehouse" : "customer-sales-analytics"}</h3><p>{project.description}</p><div className="repo-bottom"><span>{project.tags.slice(0, 3).join(" · ")}</span><a href={externalLinks.github} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} on GitHub`} data-testid={`repository-${index + 1}-link`}><MoveUpRight size={15} /></a></div></Card>)}</div></section>
+      <section className="section github-section" data-testid="github-section"><div className="section-intro"><SectionLabel number="08">Code that builds the system</SectionLabel><p className="section-note" data-testid="github-section-note">Selected repositories / Harish's GitHub.</p></div><div className="github-heading"><h2 data-testid="github-heading">Show the work.<br /><span>Share the thinking.</span></h2><a className="github-main-link" href={externalLinks.github} target="_blank" rel="noreferrer" data-testid="github-main-link"><Code2 size={17} /> View GitHub <MoveUpRight size={15} /></a></div><div className="repo-grid">{projects.map((project, index) => <Card className="repo-card" key={project.title} data-testid={`repository-card-${index + 1}`}><div className="repo-top"><Code2 size={18} /><span>public / project-{project.number}</span></div><h3 data-testid={`repository-title-${index + 1}`}>{index === 0 ? "retail-data-platform" : index === 1 ? "hotel-booking-warehouse" : "customer-sales-analytics"}</h3><p>{project.description}</p><div className="repo-bottom"><span>{project.tags.slice(0, 3).join(" · ")}</span><a href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`Open ${project.title} on GitHub`} data-testid={`repository-${index + 1}-link`}><MoveUpRight size={15} /></a></div></Card>)}</div></section>
 
-      <section className="next-step-section" id="contact" data-testid="contact-section"><div className="next-step-label"><span className="tiny-status-dot" /> Open to data engineering opportunities</div><h2 data-testid="contact-heading">Let's build<br /><span>something with data.</span></h2><p data-testid="contact-description">Open to opportunities, collaborations, and interesting data engineering problems.</p><div className="contact-actions"><Button className="button-cyan" size="lg" render={<a href={externalLinks.email} />} data-testid="contact-email-button"><Mail size={16} /> Email me</Button><a className="contact-text-link" href={externalLinks.linkedin} target="_blank" rel="noreferrer" data-testid="contact-linkedin-link"><BriefcaseBusiness size={16} /> LinkedIn</a><a className="contact-text-link" href={externalLinks.github} target="_blank" rel="noreferrer" data-testid="contact-github-link"><Code2 size={16} /> GitHub</a></div><div className="placeholder-note" data-testid="placeholder-links-note">Placeholder links are ready to replace with Harish's live profiles and resume.</div></section>
+      <section className="next-step-section" id="contact" data-testid="contact-section"><div className="next-step-label"><span className="tiny-status-dot" /> Open to data engineering opportunities</div><h2 data-testid="contact-heading">Let's build<br /><span>something with data.</span></h2><p data-testid="contact-description">Open to opportunities, collaborations, and interesting data engineering problems.</p><div className="contact-actions"><Button className="button-cyan" size="lg" render={<a href={externalLinks.email} />} data-testid="contact-email-button"><Mail size={16} /> Email me</Button><a className="contact-text-link" href={externalLinks.whatsapp} target="_blank" rel="noreferrer" data-testid="contact-whatsapp-link"><MessageCircle size={16} /> WhatsApp <span>+91 97892 31215</span></a><a className="contact-text-link" href={externalLinks.github} target="_blank" rel="noreferrer" data-testid="contact-github-link"><Code2 size={16} /> GitHub</a></div><div className="placeholder-note" data-testid="placeholder-note">Resume link can be added here later.</div></section>
 
       <footer className="site-footer" data-testid="site-footer"><div className="footer-brand"><span className="brand-symbol">HK</span><div><strong data-testid="footer-name">Harish Kumar</strong><span data-testid="footer-role">Data engineer</span></div></div><div className="footer-links"><a href="#about" data-testid="footer-about-link">About</a><a href="#projects" data-testid="footer-projects-link">Projects</a><a href="#stack" data-testid="footer-stack-link">Stack</a><a href="#contact" data-testid="footer-contact-link">Contact</a></div><div className="footer-meta"><span>© 2026 Harish Kumar</span><span>Built with curiosity, SQL, Python and data.</span></div></footer>
     </main>
