@@ -206,7 +206,7 @@ export default function Home() {
             <Button className="button-cyan" size="lg" render={<a href="#projects" />} data-testid="hero-view-projects-button">View projects <ArrowDownRight size={16} /></Button>
             <a className="text-action" href={externalLinks.github} target="_blank" rel="noreferrer" data-testid="hero-github-link">GitHub <MoveUpRight size={15} /></a>
           </motion.div>
-          <div className="hero-stack-line" data-testid="hero-technology-line">Python <i /> SQL <i /> Snowflake <i /> AWS <i /> dbt <i /> Kafka <i /> Power BI</div>
+          <div className="hero-stack-line" data-testid="hero-technology-line">Python <i /> SQL <i /> Snowflake <i /> AWS <i /> dbt <i /> Kafka-Redpanda <i /> Power BI</div>
         </div>
         <motion.div className="hero-visual-wrap" initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.18 }}>
           <div className="visual-caption"><span>01 / system view</span><span>live architecture</span></div>
